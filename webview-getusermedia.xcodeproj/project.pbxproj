@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		429EF15632313835C3C231F9 /* Pods_webview_getusermedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD37135F5126E57B023B8AC9 /* Pods_webview_getusermedia.framework */; };
 		FA38C43D225C1AD000816827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C43C225C1AD000816827 /* AppDelegate.swift */; };
 		FA38C43F225C1AD000816827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C43E225C1AD000816827 /* ViewController.swift */; };
 		FA38C442225C1AD000816827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA38C440225C1AD000816827 /* Main.storyboard */; };
 		FA38C444225C1AD100816827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA38C443225C1AD100816827 /* Assets.xcassets */; };
 		FA38C447225C1AD100816827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA38C445225C1AD100816827 /* LaunchScreen.storyboard */; };
+		FA38C450225C44FF00816827 /* AppRTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA38C44F225C44FF00816827 /* AppRTCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CEFA5D6678B7A742BD4A0EA /* Pods-webview-getusermedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webview-getusermedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia.release.xcconfig"; sourceTree = "<group>"; };
+		B1F0B35650EC9293CA7FCDD1 /* Pods-webview-getusermedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webview-getusermedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia.debug.xcconfig"; sourceTree = "<group>"; };
 		FA38C439225C1AD000816827 /* webview-getusermedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "webview-getusermedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA38C43C225C1AD000816827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA38C43E225C1AD000816827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,10 @@
 		FA38C443225C1AD100816827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA38C446225C1AD100816827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA38C448225C1AD100816827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA38C44E225C44FF00816827 /* webview-getusermedia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "webview-getusermedia-Bridging-Header.h"; sourceTree = "<group>"; };
+		FA38C44F225C44FF00816827 /* AppRTCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppRTCViewController.m; path = "webview-getusermedia/AppRTCViewController.m"; sourceTree = "<group>"; };
+		FA38C451225C451200816827 /* AppRTCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppRTCViewController.h; sourceTree = "<group>"; };
+		FD37135F5126E57B023B8AC9 /* Pods_webview_getusermedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webview_getusermedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				429EF15632313835C3C231F9 /* Pods_webview_getusermedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5972674CA70B7CB3747213D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1F0B35650EC9293CA7FCDD1 /* Pods-webview-getusermedia.debug.xcconfig */,
+				5CEFA5D6678B7A742BD4A0EA /* Pods-webview-getusermedia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B9B5F91648AD1343717AC4B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD37135F5126E57B023B8AC9 /* Pods_webview_getusermedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA38C430225C1AD000816827 = {
 			isa = PBXGroup;
 			children = (
+				FA38C44F225C44FF00816827 /* AppRTCViewController.m */,
+				FA38C451225C451200816827 /* AppRTCViewController.h */,
 				FA38C43B225C1AD000816827 /* webview-getusermedia */,
 				FA38C43A225C1AD000816827 /* Products */,
+				FA38C44E225C44FF00816827 /* webview-getusermedia-Bridging-Header.h */,
+				5972674CA70B7CB3747213D9 /* Pods */,
+				B9B5F91648AD1343717AC4B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA38C44B225C1AD200816827 /* Build configuration list for PBXNativeTarget "webview-getusermedia" */;
 			buildPhases = (
+				B7CED2B6907F5A69B33D0FC7 /* [CP] Check Pods Manifest.lock */,
 				FA38C435225C1AD000816827 /* Sources */,
 				FA38C436225C1AD000816827 /* Frameworks */,
 				FA38C437225C1AD000816827 /* Resources */,
+				0C37668326E09C9B43C84F34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +129,7 @@
 				TargetAttributes = {
 					FA38C438225C1AD000816827 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,11 +164,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C37668326E09C9B43C84F34 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppRTC/AppRTC.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7CED2B6907F5A69B33D0FC7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-webview-getusermedia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA38C435225C1AD000816827 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA38C450225C44FF00816827 /* AppRTCViewController.m in Sources */,
 				FA38C43F225C1AD000816827 /* ViewController.swift in Sources */,
 				FA38C43D225C1AD000816827 /* AppDelegate.swift in Sources */,
 			);
@@ -280,8 +364,10 @@
 		};
 		FA38C44C225C1AD200816827 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1F0B35650EC9293CA7FCDD1 /* Pods-webview-getusermedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29BWQ53ETH;
 				INFOPLIST_FILE = "webview-getusermedia/Info.plist";
@@ -291,6 +377,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cactice.webview-getusermedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "webview-getusermedia-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,8 +386,10 @@
 		};
 		FA38C44D225C1AD200816827 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CEFA5D6678B7A742BD4A0EA /* Pods-webview-getusermedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29BWQ53ETH;
 				INFOPLIST_FILE = "webview-getusermedia/Info.plist";
@@ -309,6 +399,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cactice.webview-getusermedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "webview-getusermedia-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
