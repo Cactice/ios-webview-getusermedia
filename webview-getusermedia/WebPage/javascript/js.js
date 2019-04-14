@@ -5,32 +5,28 @@ function test(val) {
 
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
-    var imageA = new Image();
-    var imageB = new Image();
+
+
+            console.log('haha')
 
 
     if(ABswitch){
+        var imageA = new Image();
         ABswitch = !ABswitch
+        document.getElementById("img").src = val;
+        document.getElementById("h1").innerHTML = "yuck";
         imageA.src = val
-        imageA.onload = function() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-
+            document.getElementById("h1").innerHTML = val;
             context.drawImage(imageA, 0, 0)
-        };
+            webkit.messageHandlers.callbackHandler.postMessage(val);
     }
     else{
+        var imageB = new Image();
         ABswitch = !ABswitch
-        imageA.src = val
         imageB.src = val
-        imageB.onload = function() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-
             context.drawImage(imageB, 0, 0)
-        };
+            webkit.messageHandlers.callbackHandler.postMessage(val);
     }
 
-    video.onended = function(){
-        webkit.messageHandlers.callbackHandler.postMessage(val);
-    }
 }
 
