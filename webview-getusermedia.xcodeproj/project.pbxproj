@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		429EF15632313835C3C231F9 /* Pods_webview_getusermedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD37135F5126E57B023B8AC9 /* Pods_webview_getusermedia.framework */; };
+		FA140F5A2261EA7700CB00FF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = FA140F542261EA7700CB00FF /* index.html */; };
+		FA140F5B2261EA7700CB00FF /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = FA140F562261EA7700CB00FF /* style.css */; };
+		FA140F5C2261EA7700CB00FF /* 360vid.mov in Resources */ = {isa = PBXBuildFile; fileRef = FA140F572261EA7700CB00FF /* 360vid.mov */; };
+		FA140F5D2261EA7700CB00FF /* js.js in Resources */ = {isa = PBXBuildFile; fileRef = FA140F592261EA7700CB00FF /* js.js */; };
 		FA38C43D225C1AD000816827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C43C225C1AD000816827 /* AppDelegate.swift */; };
 		FA38C43F225C1AD000816827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA38C43E225C1AD000816827 /* ViewController.swift */; };
 		FA38C442225C1AD000816827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA38C440225C1AD000816827 /* Main.storyboard */; };
@@ -17,8 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5CEFA5D6678B7A742BD4A0EA /* Pods-webview-getusermedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webview-getusermedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia.release.xcconfig"; sourceTree = "<group>"; };
-		B1F0B35650EC9293CA7FCDD1 /* Pods-webview-getusermedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webview-getusermedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia.debug.xcconfig"; sourceTree = "<group>"; };
+		2BB3FEB52449F928C29489F1D8210409 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		FA140F372261B35500CB00FF /* AppRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA140F392261B35500CB00FF /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA140F542261EA7700CB00FF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		FA140F562261EA7700CB00FF /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		FA140F572261EA7700CB00FF /* 360vid.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 360vid.mov; sourceTree = "<group>"; };
+		FA140F592261EA7700CB00FF /* js.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js.js; sourceTree = "<group>"; };
 		FA38C439225C1AD000816827 /* webview-getusermedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "webview-getusermedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA38C43C225C1AD000816827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA38C43E225C1AD000816827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +37,6 @@
 		FA38C44E225C44FF00816827 /* webview-getusermedia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "webview-getusermedia-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA38C44F225C44FF00816827 /* AppRTCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppRTCViewController.m; path = "webview-getusermedia/AppRTCViewController.m"; sourceTree = "<group>"; };
 		FA38C451225C451200816827 /* AppRTCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppRTCViewController.h; sourceTree = "<group>"; };
-		FD37135F5126E57B023B8AC9 /* Pods_webview_getusermedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_webview_getusermedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,28 +44,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				429EF15632313835C3C231F9 /* Pods_webview_getusermedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5972674CA70B7CB3747213D9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B1F0B35650EC9293CA7FCDD1 /* Pods-webview-getusermedia.debug.xcconfig */,
-				5CEFA5D6678B7A742BD4A0EA /* Pods-webview-getusermedia.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		B9B5F91648AD1343717AC4B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FD37135F5126E57B023B8AC9 /* Pods_webview_getusermedia.framework */,
+				FA140F372261B35500CB00FF /* AppRTC.framework */,
+				FA140F392261B35500CB00FF /* SocketRocket.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA140F412261C30900CB00FF /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				2BB3FEB52449F928C29489F1D8210409 /* WebRTC.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		FA140F532261EA7700CB00FF /* WebPage */ = {
+			isa = PBXGroup;
+			children = (
+				FA140F542261EA7700CB00FF /* index.html */,
+				FA140F552261EA7700CB00FF /* css */,
+				FA140F572261EA7700CB00FF /* 360vid.mov */,
+				FA140F582261EA7700CB00FF /* javascript */,
+			);
+			name = WebPage;
+			path = "webview-getusermedia/WebPage";
+			sourceTree = "<group>";
+		};
+		FA140F552261EA7700CB00FF /* css */ = {
+			isa = PBXGroup;
+			children = (
+				FA140F562261EA7700CB00FF /* style.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		FA140F582261EA7700CB00FF /* javascript */ = {
+			isa = PBXGroup;
+			children = (
+				FA140F592261EA7700CB00FF /* js.js */,
+			);
+			path = javascript;
 			sourceTree = "<group>";
 		};
 		FA38C430225C1AD000816827 = {
@@ -66,11 +100,12 @@
 			children = (
 				FA38C44F225C44FF00816827 /* AppRTCViewController.m */,
 				FA38C451225C451200816827 /* AppRTCViewController.h */,
+				FA140F532261EA7700CB00FF /* WebPage */,
 				FA38C43B225C1AD000816827 /* webview-getusermedia */,
 				FA38C43A225C1AD000816827 /* Products */,
 				FA38C44E225C44FF00816827 /* webview-getusermedia-Bridging-Header.h */,
-				5972674CA70B7CB3747213D9 /* Pods */,
 				B9B5F91648AD1343717AC4B6 /* Frameworks */,
+				FA140F412261C30900CB00FF /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,11 +137,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA38C44B225C1AD200816827 /* Build configuration list for PBXNativeTarget "webview-getusermedia" */;
 			buildPhases = (
-				B7CED2B6907F5A69B33D0FC7 /* [CP] Check Pods Manifest.lock */,
 				FA38C435225C1AD000816827 /* Sources */,
 				FA38C436225C1AD000816827 /* Frameworks */,
 				FA38C437225C1AD000816827 /* Resources */,
-				0C37668326E09C9B43C84F34 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,62 +189,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA140F5A2261EA7700CB00FF /* index.html in Resources */,
+				FA140F5B2261EA7700CB00FF /* style.css in Resources */,
 				FA38C447225C1AD100816827 /* LaunchScreen.storyboard in Resources */,
+				FA140F5C2261EA7700CB00FF /* 360vid.mov in Resources */,
 				FA38C444225C1AD100816827 /* Assets.xcassets in Resources */,
+				FA140F5D2261EA7700CB00FF /* js.js in Resources */,
 				FA38C442225C1AD000816827 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0C37668326E09C9B43C84F34 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AppRTC/AppRTC.framework",
-				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppRTC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-webview-getusermedia/Pods-webview-getusermedia-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B7CED2B6907F5A69B33D0FC7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-webview-getusermedia-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA38C435225C1AD000816827 /* Sources */ = {
@@ -297,10 +285,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -352,9 +342,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -364,13 +356,24 @@
 		};
 		FA38C44C225C1AD200816827 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1F0B35650EC9293CA7FCDD1 /* Pods-webview-getusermedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29BWQ53ETH;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/WebRTC",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/libjingle_peerconnection\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/libjingle_peerconnection\"",
+				);
 				INFOPLIST_FILE = "webview-getusermedia/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,13 +389,24 @@
 		};
 		FA38C44D225C1AD200816827 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CEFA5D6678B7A742BD4A0EA /* Pods-webview-getusermedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 29BWQ53ETH;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/WebRTC",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/libjingle_peerconnection\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/libjingle_peerconnection\"",
+				);
 				INFOPLIST_FILE = "webview-getusermedia/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
