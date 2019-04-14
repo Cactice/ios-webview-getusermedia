@@ -6,9 +6,15 @@ import MobileCoreServices
 
 
 class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, AVCaptureFileOutputRecordingDelegate{
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("JS sent a message")
         if(message.name == "callbackHandler") {
             print("JavaScript is sending a message \(message.body)")
+        }
+         if let filePathName = message.body as? String {
+            let fileManager = FileManager.default
+            //try! fileManager.removeItem(atPath: filePathName)
         }
     }
     
@@ -60,20 +66,18 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
     
     override func loadView() {
         super.loadView()
-        let webConfiguration = WKWebViewConfiguration()
-        webConfiguration.allowsInlineMediaPlayback = true
-        webView = WKWebView(frame: webviewView.frame, configuration: webConfiguration)
+        let webviewConfig: WKWebViewConfiguration = WKWebViewConfiguration()
+        let userController: WKUserContentController = WKUserContentController()
+        userController.add(self, name: "callbackHandler")
+        webviewConfig.userContentController = userController
+        webviewConfig.allowsInlineMediaPlayback = true
+        webView = WKWebView(frame: webviewView.frame, configuration: webviewConfig)
         webView.uiDelegate = self
         view = webView
     }
     
 
     override func viewDidLoad() {
-        
-        let webviewConfig: WKWebViewConfiguration = WKWebViewConfiguration()
-        let userController: WKUserContentController = WKUserContentController()
-        userController.add(self, name: "callbackHandler")
-        webviewConfig.userContentController = userController
         
         super.viewDidLoad()
         
@@ -88,7 +92,7 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
         setupInputOutput()
         setupPreviewLayer()
         captureSession.startRunning()
-        self.timer = Timer.scheduledTimer(timeInterval: 3.0,
+        self.timer = Timer.scheduledTimer(timeInterval: 1.0,
                                           target: self,
                                           selector: #selector(ViewController.Interval),
                                           userInfo: nil,

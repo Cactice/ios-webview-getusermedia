@@ -4,8 +4,8 @@ var initialCall = true;
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
-function playOnCanvas(){
-    draw(this,context,canvas.width,canvas.height);
+function playOnCanvas(video){
+    draw(video,context,canvas.width,canvas.height);
 }
 
 
@@ -13,12 +13,10 @@ var videoStream = [] //FIFO
 
 function addVideo(url){
     var newVid = document.createElement('video');
-    newVid.addEventListener('play', playOnCanvas);
+    newVid.addEventListener('play', function(){playOnCanvas(newVid)});
     newVid.addEventListener('ended',switchOnCanvas2);
     newVid.setAttribute("playsinline",null);
     newVid.setAttribute("webkit-playsinline",null);
-    newVid.height = 200
-    newVid.width = 300
     newVid.src = url
     newVid.muted = true
     newVid.webkitPlaysinline = true
@@ -43,6 +41,7 @@ function switchOnCanvas2(endedVideo,nextVideo) {
         }
         try {
             nextVideo.play().then(function() {
+                webkit.messageHandlers.callbackHandler.postMessage(videoStream[0].src);
                 if(videoStream.length < 2){
                     videoStream.shift()
                 }else{
@@ -59,6 +58,7 @@ function switchOnCanvas2(endedVideo,nextVideo) {
 
 
 function test(val) {
+    console.log(val,)
     addVideo(val)
     if(initialCall===true){
         (function playFirstVideo(){
@@ -69,24 +69,10 @@ function test(val) {
         initialCall = false
     }
 
-    // if(ABswitch){
-    //     ABswitch = !ABswitch
-    //     videoA.src = val
-
-    //     if(initialCall===true){
-    //         videoA.play()
-    //         initialCall = false
-    //     }
-    // }
-    // else{
-    //     ABswitch = !ABswitch
-    //     videoB.src = val
-    // }
-
 }
 
 function draw(v,c,w,h) {
     if(v.paused || v.ended) return false;
-    c.drawImage(v,0,0);
+    c.drawImage(v,0,0,w,h);
     setTimeout(draw,20,v,c,w,h);
 }
