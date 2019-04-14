@@ -98,6 +98,12 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
         let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
         let cachesDirectory = paths[0] as String
         
+        if(self.fileOutput.isRecording){
+            self.fileOutput.stopRecording()
+            captureSession.stopRunning()
+            captureSession.startRunning()
+        }
+        
         self.saveCounter += 1
         filePath = "\(cachesDirectory)/temp\(saveCounter).mp4"
         let fileURL = NSURL(fileURLWithPath: filePath!)
