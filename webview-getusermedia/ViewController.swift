@@ -61,6 +61,7 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
     override func loadView() {
         super.loadView()
         let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.allowsInlineMediaPlayback = true
         webView = WKWebView(frame: webviewView.frame, configuration: webConfiguration)
         webView.uiDelegate = self
         view = webView
@@ -139,11 +140,7 @@ extension ViewController{
 extension ViewController{
     
     func setupCaptureSession() {
-        captureSession.sessionPreset = AVCaptureSession.Preset.medium
-    }
-    // カメラの画質の設定
-    func setupWebview() {
-        captureSession.sessionPreset = AVCaptureSession.Preset.medium
+        captureSession.sessionPreset = AVCaptureSession.Preset.low
     }
     
     // デバイスの設定
