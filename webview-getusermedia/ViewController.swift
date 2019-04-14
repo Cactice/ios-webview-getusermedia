@@ -5,49 +5,16 @@ import WebKit
 import MobileCoreServices
 
 
-class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, AVCapturePhotoCaptureDelegate  {
+class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, AVCaptureFileOutputRecordingDelegate{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if(message.name == "callbackHandler") {
             print("JavaScript is sending a message \(message.body)")
         }
     }
     
-    @available(iOS 11.0, *)
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
-        
-        if let error = error {
-            print("error occured : \(error.localizedDescription)")
-        }
-        
-        if let dataImage = photo.fileDataRepresentation() {
-            print(UIImage(data: dataImage)?.size as Any)
-            
-            let dataProvider = CGDataProvider(data: dataImage as CFData)
-            let cgImageRef: CGImage! = CGImage(jpegDataProviderSource: dataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
-            
-            let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)
-            let cachesDirectory = paths[0] as String
-            
-            filePath = "\(cachesDirectory)/temp\(saveCounter).jpeg"
-            let fileURL = URL(fileURLWithPath: filePath!)
-            
-            writeCGImage(cgImageRef, to: fileURL)
-            /**
-             save image in array / do whatever you want to do with the image here
-             */
-            
-        } else {
-            print("some error here")
-        }
-    }
+
     
-    @discardableResult func writeCGImage(_ image: CGImage, to destinationURL: URL) -> Bool {
-        guard let destination = CGImageDestinationCreateWithURL(destinationURL as CFURL, kUTTypePNG, 1, nil) else { return false }
-        CGImageDestinationAddImage(destination, image, nil)
-        return CGImageDestinationFinalize(destination)
-    }
-    
-    func cameraOutputComplete(_ output: AVCapturePhotoOutput, didFinishRecordingTo outputFileURL: URL) {
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         print("Video save done. Stream start.")
         
         let file = FileManager.default
@@ -69,7 +36,6 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
     
     
     @IBOutlet weak var cameraView: UIView!
-
     @IBOutlet weak var webviewView: UIView!
     
     
@@ -87,7 +53,7 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
     var cameraPreviewLayer : AVCaptureVideoPreviewLayer?
     var filePath : String?
     var timer: Timer?
-    let cameraOutput = AVCapturePhotoOutput()
+    let fileOutput = AVCaptureMovieFileOutput()
     var streamCounter = 0
     var saveCounter = 0
     var webView: WKWebView!
@@ -133,14 +99,9 @@ class ViewController: UIViewController,  WKUIDelegate, WKScriptMessageHandler, A
         let cachesDirectory = paths[0] as String
         
         self.saveCounter += 1
-        filePath = "\(cachesDirectory)/temp\(saveCounter).jpeg"
+        filePath = "\(cachesDirectory)/temp\(saveCounter).mp4"
         let fileURL = NSURL(fileURLWithPath: filePath!)
-        if #available(iOS 11.0, *) {
-                cameraOutput.capturePhoto(with: AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecType.jpeg]), delegate: self as AVCapturePhotoCaptureDelegate)
-        } else {
-            cameraOutput.capturePhoto(with: AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG]), delegate: self as AVCapturePhotoCaptureDelegate)
-        }
-        
+        self.fileOutput.startRecording(to: fileURL as URL, recordingDelegate: self as AVCaptureFileOutputRecordingDelegate)
         print("cut")
         print(self.saveCounter)
         
@@ -207,7 +168,7 @@ extension ViewController{
             // 出力データを受け取るオブジェクトの作成
             // 出力ファイルのフォーマットを指定
             
-            captureSession.addOutput(cameraOutput)
+            captureSession.addOutput(fileOutput)
         } catch {
             print(error)
         }
