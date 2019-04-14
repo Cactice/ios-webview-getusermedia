@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,41 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="webview_getusermedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUV-kM-R4Z">
+                                <rect key="frame" x="0.0" y="248" width="414" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5O-ar-dft">
+                                <rect key="frame" x="0.0" y="20" width="414" height="206"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iUV-kM-R4Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="248" id="3h2-8l-LE8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iUV-kM-R4Z" secondAttribute="bottom" id="9q9-c3-h3m"/>
+                            <constraint firstItem="t5O-ar-dft" firstAttribute="trailing" secondItem="iUV-kM-R4Z" secondAttribute="trailing" id="AX6-Tw-iYI"/>
+                            <constraint firstItem="t5O-ar-dft" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OTk-u0-V33"/>
+                            <constraint firstItem="iUV-kM-R4Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eeu-Vg-ROS"/>
+                            <constraint firstItem="t5O-ar-dft" firstAttribute="leading" secondItem="iUV-kM-R4Z" secondAttribute="leading" id="gnW-57-AsS"/>
+                            <constraint firstItem="iUV-kM-R4Z" firstAttribute="top" secondItem="t5O-ar-dft" secondAttribute="bottom" constant="22" id="sI7-aY-COy"/>
+                            <constraint firstAttribute="trailing" secondItem="iUV-kM-R4Z" secondAttribute="trailing" id="yWR-Qn-LDb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="iUV-kM-R4Z" id="wzy-er-hTv"/>
+                        <outlet property="webviewView" destination="t5O-ar-dft" id="iNa-T7-8bf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="127.5" y="117.25352112676056"/>
         </scene>
     </scenes>
 </document>
