@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0FB8F122777A8900B9F932 /* FrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FB8F022777A8900B9F932 /* FrameExtractor.swift */; };
 		FA140F5A2261EA7700CB00FF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = FA140F542261EA7700CB00FF /* index.html */; };
 		FA140F5B2261EA7700CB00FF /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = FA140F562261EA7700CB00FF /* style.css */; };
 		FA140F5D2261EA7700CB00FF /* js.js in Resources */ = {isa = PBXBuildFile; fileRef = FA140F592261EA7700CB00FF /* js.js */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		2BB3FEB52449F928C29489F1D8210409 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		FA0FB8F022777A8900B9F932 /* FrameExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameExtractor.swift; sourceTree = "<group>"; };
 		FA140F372261B35500CB00FF /* AppRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA140F392261B35500CB00FF /* SocketRocket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketRocket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA140F542261EA7700CB00FF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FA38C43C225C1AD000816827 /* AppDelegate.swift */,
+				FA0FB8F022777A8900B9F932 /* FrameExtractor.swift */,
 				FA38C43E225C1AD000816827 /* ViewController.swift */,
 				FA38C440225C1AD000816827 /* Main.storyboard */,
 				FA38C443225C1AD100816827 /* Assets.xcassets */,
@@ -204,6 +207,7 @@
 			files = (
 				FA38C450225C44FF00816827 /* AppRTCViewController.m in Sources */,
 				FA38C43F225C1AD000816827 /* ViewController.swift in Sources */,
+				FA0FB8F122777A8900B9F932 /* FrameExtractor.swift in Sources */,
 				FA38C43D225C1AD000816827 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
